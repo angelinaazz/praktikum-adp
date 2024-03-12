@@ -1,0 +1,38 @@
+program Menentukan_Volume_Balok_dan_Tabung;
+var 
+  Panjang, Lebar, Tinggi_B, Volume_B, Tinggi_T, Diameter, r, Volume_T, Volume_Total : real;
+
+begin
+  writeln ('PROGRAM MENGHITUNG JUMLAH VOLUME BALOK DAN TABUNG');
+  writeln ('=================================================');
+  
+  write ('Masukkan Panjang Balok (dalam cm)   = ');
+  readln (Panjang);
+  write ('Masukkan Lebar Balok (dalam cm)     = ');
+  readln (Lebar);
+  write ('Masukkan Tinggi Balok (dalam cm)    = ');
+  readln (Tinggi_B);
+  write ('Masukkan Tinggi Tabung (dalam cm)   = ');
+  readln (Tinggi_T);
+  write ('Masukkan Diameter Tabung (dalam cm) = ');
+  readln (Diameter);
+  
+  //Jari-Jari Tabung
+  r := 1/2*Diameter;
+  writeln ('Jari-Jari Tabung (dalam cm)         = ', r);
+  writeln ;
+  
+  //Rumus Volume Balok
+  Volume_B := Panjang*Lebar*Tinggi_B;
+  writeln ('Volume Balok       = ', Volume_B, ' cm³');
+ 
+  //Rumus Volume Tabung
+  Volume_T := 22/7*r*r*Tinggi_T;
+  writeln ('Volume Tabung      = ', Volume_T, ' cm³');
+  
+  //Volume total
+  Volume_Total := Volume_B + Volume_T;
+  writeln ('Volume Total       = ', Volume_Total, ' cm³');
+  writeln ;
+  write ('Jadi, volume total balok dan tabung adalah ', Volume_Total, ' cm³');
+end.
