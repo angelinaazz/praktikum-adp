@@ -1,0 +1,65 @@
+#Judul Program
+print("               PROGRAM PAKET BUKBER ONLINE               ")
+print("==========================================================")
+
+print()
+print("Assalamu'alaikum Warahmatullahi Wabarakatuh Ikhwah")
+print()
+
+#Cetak menu
+print("•DAFTAR MENU PAKET BUKBER• ")
+print("  -––––––––––––  –––––––––– ")
+print(" | Jenis Paket ||   Harga  |")
+print(" |–––––––––––––||––––––––––|")
+print(" |   Paket A   ||  25.000  |")
+print(" |   Paket B   ||  30.000  |")
+print(" |   Paket C   ||  45.000  |")
+print()
+
+nama = str(input("Masukkan Nama Anda               : "))
+paket = input("Pilih Paket Bukber (A/B/C)       : ").upper()
+jumlah_paket = int(input("Jumlah paket yang akan anda beli : "))
+
+#Harga Paket
+if paket == 'A':
+   harga_paket = 25000*jumlah_paket
+elif paket == 'B':
+     harga_paket = 30000*jumlah_paket
+elif paket == 'C':
+    harga_paket = 45000*jumlah_paket
+else:
+    print("Pilihan Anda tidak valid")
+
+print ("Harga Makanan                    :", harga_paket)
+print ()
+print ()
+
+#ONGKIR
+print("•PESAN ANTAR MAKANAN ONLINE•")
+print("  -–––––––––––––––––  ––––––––")
+print(" |       Jarak      || Ongkir |")
+print(" |-–––––––––––––––––||––––––––| ")
+print(" | kurang dari 500m || gratis |")
+print(" | 500m - 1500m     || 10.000 |")
+print(" | lebih dari 1500m || 20.000 |")
+print()
+
+jarak = int(input("jarak dari rumah ke restoran (m) : "))
+
+if jarak <= 500:
+    harga_ongkir = 0
+elif 500 < jarak <= 1500:
+    harga_ongkir = 10000
+elif jarak > 1500:
+    harga_ongkir = 20000
+else:
+    print("Angka yang Anda masukkan salah")
+
+biaya_total = harga_paket + harga_ongkir
+
+print("Ongkir                           :", harga_ongkir)
+print("Biaya Total                      :", biaya_total)
+print()
+print("Jadi, Total biaya yang harus", nama, "bayar adalah ", biaya_total)
+print()
+print("~~~~~~~~~~~~~~~~~~~~SYUKRAN KATSIRAN~~~~~~~~~~~~~~~~~~~~")
