@@ -46,18 +46,21 @@ print()
 
 jarak = int(input("jarak dari rumah ke restoran (m) : "))
 
-if jarak <= 500:
+if 0 < jarak < 500:
     harga_ongkir = 0
-elif 500 < jarak <= 1500:
+elif 500 <= jarak <= 1500:
     harga_ongkir = 10000
 elif jarak > 1500:
     harga_ongkir = 20000
 else:
     print("Angka yang Anda masukkan salah")
 
+print("Ongkir                           :", harga_ongkir)
+
+#rumus biaya total
+
 biaya_total = harga_paket + harga_ongkir
 
-print("Ongkir                           :", harga_ongkir)
 print("Biaya Total                      :", biaya_total)
 print()
 print("Jadi, Total biaya yang harus", nama, "bayar adalah ", biaya_total)
