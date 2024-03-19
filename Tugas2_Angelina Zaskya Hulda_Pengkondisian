@@ -58,7 +58,6 @@ else:
 print("Ongkir                           :", harga_ongkir)
 
 #rumus biaya total
-
 biaya_total = harga_paket + harga_ongkir
 
 print("Biaya Total                      :", biaya_total)
