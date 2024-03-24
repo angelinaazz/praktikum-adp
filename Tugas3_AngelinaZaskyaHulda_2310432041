@@ -1,0 +1,28 @@
+program Perulangan;
+uses crt;
+var
+  Count, I : integer;
+
+begin
+  clrscr;
+  writeln;
+  writeln ('    PROGRAM PERULANGAN    ');
+  writeln ('==========================');
+  writeln;
+  
+  Count := 1;
+  for I := 1 to 80 do
+  begin
+    if Count mod 4 = 0 then
+      write ('DOR ')
+    else
+      write (Count, ' ');
+      
+    if I mod 8 = 0 then
+      writeln;
+      
+    Count := Count + 1;
+  end;
+  writeln;
+  writeln ('==========================');
+end.
