@@ -1,0 +1,193 @@
+program Daftar_Belanja;
+uses crt;
+const 
+    P = 103000;
+    Q = 99000;
+    R = 105000;
+    S = 95000;
+    T = 145000;
+    U = 199000;
+
+var 
+    A, B, C, D, E, F, G, H, I, J, K, L, M, N, O : string;
+    nama, Buku, Tambahan, kode: string;
+    x, z, v, y, bazar: integer;
+    Harga, Harga1, Total_Harga, fix: real;
+    
+begin
+    clrscr;
+    writeln;
+    writeln('                     PROGRAM DAFTAR BELANJA                    ');
+    writeln ('===============================================================');
+    writeln;
+    
+    writeln ('DAFTAR JUDUL BUKU TERELIYE');
+    writeln (' –––––  –––––––––––––––––  ––––––––––– ');
+    writeln ('| Kode||   SERIAL BUMI   ||    HARGA   |');
+    writeln ('|–––––  –––––––––––––––––  ––––––––––––|');
+    writeln ('|  A  || Bumi            || Rp103.000  |');
+    writeln ('|  B  || Bulan           || Rp99.000   |');
+    writeln ('|  C  || Matahari        || Rp99.000   |');
+    writeln ('|  D  || Bintang         || Rp99.000   |');
+    writeln ('|  E  || Ceros & Batozar || Rp99.000   |');
+    writeln ('|  F  || Komet           || Rp99.000   |');
+    writeln ('|  G  || Komet Minor     || Rp105.000  |');
+    writeln ('|  H  || Selena          || Rp99.000   |');
+    writeln ('|  I  || Nebula          || Rp99.000   |');
+    writeln ('|  J  || Si Putih        || Rp99.000   |');
+    writeln ('|  K  || Lumpu           || Rp99.000   |');
+    writeln ('|  L  || Bibi Gill       || Rp95.000   |');
+    writeln ('|  M  || SagaraS         || Rp99.000   |');
+    writeln ('|  N  || Matahari Minor  || Rp99.000   |');
+    writeln ('|  O  || ILY             || Rp99.000   |');
+    writeln (' –––––  –––––––––––––––––  –––––––––––– ');
+    writeln;
+    
+    writeln ('PROMO RAMADHAN (MAX 3 BUKU)');
+    writeln ('• DISKON 20% untuk pembelian 1 buku');
+    writeln ('• COMBO 2 Buku pilih bebas Rp145.000');
+    writeln ('• COMBO 3 Buku pilih bebas Rp199.000');
+    writeln ('• SPESIAL DISKON BUMI sebesar 35%');
+    writeln;
+    
+    write ('Nama Pembeli                  : ');
+    readln (nama);
+    write ('Jumlah buku yang ingin dibeli : ');
+    readln (z);
+    
+    writeln ('Buku yang akan dibeli (ketik kode buku) : ');
+    for x :=1 to z do
+    begin
+      write (x,') ');
+      readln (buku);
+    end;
+    writeln;
+    
+    
+    if z <= 0 then
+    begin 
+      writeln ('Angka yang anda masukkan salah');
+    end
+    
+    else if z = 1 then
+    begin
+      if Upcase(buku) = 'A' then
+      begin
+        writeln ('Selamat, Anda mendapatkan diskon 35%');
+        Harga := P - (P * 0.35)
+      end
+      else if (Upcase(buku) = 'B') or (Upcase(buku) = 'C') or (Upcase(buku) = 'D') or (Upcase(buku) = 'E') or (Upcase(buku) = 'F') or (Upcase(buku) = 'H') or (Upcase(buku) = 'I') or (Upcase(buku) = 'J') or (Upcase(buku) = 'K') or (Upcase(buku) = 'M') or (Upcase(buku) = 'N') or (Upcase(buku) = 'O') then
+      begin
+        writeln ('Selamat, Anda mendapatkan diskon 20%');
+        Harga := Q - (Q * 0.2)
+      end
+      else if Upcase(buku) = 'G' then
+      begin
+        writeln ('Selamat, Anda mendapatkan diskon 20%');
+        Harga := R - (R * 0.2);
+      end
+      else if Upcase(buku) = 'L' then
+      begin
+        writeln ('Selamat, Anda mendapatkan diskon 20%');
+        Harga := S - (S * 0.2);
+      end
+      else
+        writeln('Kode Buku tidak valid.');
+      end
+      
+    else if z = 2 then
+      begin
+        writeln('Selamat, Anda mendapatkan promo combo 2');
+        Harga := T;
+      end
+      
+    else if z = 3 then
+      begin 
+        writeln ('Selamat, Anda mendapatkan promo combo 3');
+        Harga := U
+      end
+    else 
+      begin
+        writeln ('MAXIMAL 3 BUKU');
+      end;
+   writeln ('Harga = ', Harga);
+   writeln;
+   writeln;
+   
+   writeln ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+   writeln ('BAZAR RAMADHAN (MAX 3 ITEM, TIDAK BOLEH MEMESAN ITEM YANG SAMA)');
+   writeln (' ––––––  –––––––––––––––––  ––––––––––– ');
+   writeln ('| Kode ||   SERIAL BUMI   ||   HARGA  |');
+   writeln ('|––––––  –––––––––––––––––  ––––––––––|');
+   writeln ('|  AA  || Gantungan Kunci || Rp10.000 |');
+   writeln ('|  BB  || Tumbler         || Rp55.000 |');
+   writeln ('|  CC  || Tote Bag        || Rp35.000 |');
+   writeln (' ––––––  –––––––––––––––––  –––––––––– ');
+   writeln ('Hanya tersedia pemesanan 1 item atau 3 item');
+   writeln;
+   
+   
+   write ('Apakah ada tambahan (y/n)        : ');
+   readln (tambahan);
+   if UpCase(tambahan) = 'Y' then
+   begin
+     write ('Jumlah barang yang akan dibeli   : ');
+     readln (bazar);
+     for y:=1 to bazar do
+     begin
+       write ('Ketik kode barang                : ');
+       readln (kode);
+     end
+   end
+   else
+     begin
+      writeln;
+      writeln ('Harga yang harus dibayarkan sebesar Rp', Harga);
+      writeln;
+      writeln ('TERIMA KASIH SUDAH BERBELANJA');
+      writeln;
+      writeln ('===============================================================');
+      break;
+     end;
+    
+   
+   if bazar = 1 then
+   begin
+     if Upcase(kode) = 'AA' then
+       Harga1 := 10000
+     else if Upcase(kode) = 'BB' then
+       Harga1 := 55000
+     else if Upcase(kode) = 'CC' then
+       Harga1 := 35000
+     else 
+       writeln ('Kode tidak valid');
+   end
+   else if bazar = 3 then
+     harga1 := 100000
+   else
+     writeln ('Maximal 3 item');
+  
+ 
+     
+   Total_Harga := Harga + Harga1;
+   writeln ('Total Harga                      : ', Total_Harga);
+   writeln;
+   
+   if Total_Harga >= 250000 then
+   begin
+     writeln ('Anda mendapatkan tambahan diskon 30% dari total harga');
+     fix := Total_Harga - Total_Harga*0.3;
+   end
+   else
+     fix := Total_Harga;
+   writeln;
+   writeln ('Harga yang harus dibayarkan sebesar Rp', fix);
+   writeln;
+   writeln ('TERIMA KASIH SUDAH BERBELANJA');
+   writeln;
+   writeln ('===============================================================');
+end.
+
+
+    
+
