@@ -1,0 +1,50 @@
+program TUGAS5;
+uses crt;
+var 
+    x : array[-10..10] of integer;
+    i : integer ;
+    fungsi : real;
+    
+begin
+    clrscr;
+    writeln ('        PROGRAM f(x) DENGAN ARRAY        ');
+    writeln ('=========================================');
+    
+    writeln ('Fungsi f didefenisikan sebagai berikut : ');
+    writeln ('f(x) = x²+2x, jika x>0');
+    writeln ('f(x) = 1/x, jika x<0');
+    writeln ('f(x) = 10, jika x=0');
+    writeln;
+    
+    writeln ('• Tabel Fungsi ');
+    writeln ('|  x  |   f(x)  | ');
+ 
+    for i:=-10 to 10 do
+    begin    
+      x[i]:=i;
+      if x[i] > 0 then
+      begin
+        fungsi := (x[i]*x[i])+(2*x[i]);
+      end
+      else if x[i] <0 then
+      begin
+        fungsi := 1/x[i];
+      end
+      else if x[i]=0 then
+      begin
+        fungsi := 10;
+      end;
+      
+    writeln ('| ', x[i]:3, ' | ', fungsi:7:3,  ' |');
+    end;
+    
+    writeln;
+    writeln ('=========================================');
+    writeln ('TUGAS 5 ADP "ARRAY" ');
+    writeln ('Nama  : Angelina Zaskya Hulda ');
+    writeln ('NIM   : 2310432041');
+    writeln ('Shift : 3');
+    
+    readln;
+end.
+
