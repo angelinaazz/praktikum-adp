@@ -1,0 +1,66 @@
+print("      PROGRAM MATRIKS n × n      ")
+print("=================================")
+print()
+
+n = int(input("Masukkan nilai n: "))
+
+#entri matriks A
+A = []
+print()
+print("Entri Matriks A")
+for i in range(n):
+    barisA = []
+    for j in range(n):
+        entriA = int(input(f"Input entri baris {i+1} kolom {j+1}: "))
+        barisA.append(entriA)
+    A.append(barisA)
+
+#entri matriks B
+B = []
+print()
+print("Entri Matriks B")
+for i in range(n):
+    barisB = []
+    for j in range(n):
+        entriB = int(input(f"Input entri baris {i+1} kolom {j+1}: "))
+        barisB.append(entriB)
+    B.append(barisB)
+
+#MATRIKS A
+print()
+print("• Matriks A = ")
+for elemen in A:
+    print(elemen) 
+    
+#MATRIKS B
+print()
+print("• Matriks B = ")
+for elemen in B:
+    print(elemen) 
+    
+#MATRIKS C
+C = [[0] * n for _ in range(n)]
+
+for i in range(n):
+    for j in range(n):
+        for k in range(n):
+            C[i][j] += A[i][k] * B[k][j]
+
+print()
+print("• Matriks C = ")
+for elemen in C:
+    print(elemen)
+
+#Transpose
+A_T = [[A[j][i] for j in range(n)] for i in range(n)]
+B_T = [[B[j][i] for j in range(n)] for i in range(n)]
+
+#MATRIKS D
+D = [[A_T[i][j] + B_T[i][j] for j in range(n)] for i in range(n)]
+
+print()
+print("• Matriks D = ")
+for elemen in D:
+    print(elemen)
+
+print("=================================")
