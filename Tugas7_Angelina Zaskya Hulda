@@ -1,0 +1,47 @@
+print("Program Menentukan Mean, Median, Variance")
+print("==========================================")
+n = int(input("input banyak data   : "))
+
+himp_data = []
+for i in range(n):
+    data = int(input(f"masukkan data ke- {i + 1} : "))
+    himp_data.append(data)
+    
+print()
+print("Data : ")
+print(himp_data)
+print()
+
+def mean(himp_data, n):
+    return sum(himp_data) / n
+
+def modus(himp_data):
+    data2 = {}
+    for angka in himp_data:
+        if angka in data2:
+            data2[angka] += 1
+        else:
+            data2[angka] = 1
+    data2max = max(data2.values())
+    
+    modus = []
+    for angka in data2:
+        if data2[angka] == data2max:
+            modus.append(str(angka))
+    return modus
+
+def ragam(himp_data, n):
+    rata = mean(himp_data, n)
+    kuadrat = [(x - rata) ** 2 for x in himp_data]
+    return sum(kuadrat) / (n - 1)
+
+meann = mean(himp_data, n)
+moduss = modus(himp_data)
+ragamm = ragam(himp_data, n)
+
+print("| mean  || {:^5.2f} |".format(meann))
+print("| modus || {:^5} |".format(", ".join(moduss)))
+print("| ragam || {:^5.2f} |".format(ragamm))
+print()
+
+print("==========================================")
