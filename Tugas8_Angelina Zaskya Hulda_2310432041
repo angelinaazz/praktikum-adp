@@ -1,0 +1,93 @@
+print("                 Program Database Film                 ")
+print("========================================================")
+
+#menambah data film
+def tambah_film(judul, penulis_skenario, sutradara, tahun_rilis):
+    with open("database_film.txt", "a") as file:
+        file.write(f"{judul}, {penulis_skenario}, {sutradara}, {tahun_rilis}\n")
+    print("Data film berhasil ditambahkan.")
+
+#menghapus data film
+def hapus_film(judul):
+    with open("database_film.txt", "r") as file:
+        lines = file.readlines()
+    with open("database_film.txt", "w") as file:
+        for line in lines:
+            if line.split(",")[0] !=judul:
+                file.write(line)
+    print("Data film berhasil dihapus.")
+    
+#mengedit data film
+def edit_film(judul, penulis_skenario, sutradara, tahun_rilis):
+    with open("database_film.txt", "r") as file:
+        lines = file.readlines()
+    with open("database_film.txt", "w") as file:
+        for line in lines:
+            if line.split(",")[0] == judul:
+                file.write(f"{judul}, {penulis_skenario}, {sutradara}, {tahun_rilis}\n")
+            else:
+                file.write(line)
+    print("Data film berhasil diubah.")
+    
+#menampilkan seluruh data film
+def tampilkan_datafilm():
+    with open("database_film.txt", "r") as file:
+        data_film = file.readlines()
+    if data_film:
+        print("\nData Film:")
+        for data in data_film:
+            print(data.strip())
+    else:
+        print("Database film kosong.")
+
+# Main program
+while True: 
+    print("\nMenu :")
+    print("1. Tambah Data Film")
+    print("2. Hapus Data Film")
+    print("3. Edit Data Film")
+    print("4. Tampilkan Semua Data Film")
+    print("5. Keluar")
+
+    pilihan = input("Pilih Menu (1/2/3/4/5) : ")
+
+    if pilihan == "1":
+        judul = input("Masukkan Judul Film            : ")
+        penulis_skenario = input("Masukkan Nama Penulis Skenario : ")
+        sutradara = input("Masukkan Nama Sutradara        : ")
+        tahun_rilis = input("Masukkan Tahun Rilis           : ")
+        tambah_film(judul, penulis_skenario, sutradara, tahun_rilis)
+    
+    elif pilihan == "2":
+        judul = input("Masukkan judul film yang akan dihapus : ")
+        hapus_film(judul)
+    
+    elif pilihan == "3":
+        judul = input("Masukkan judul film yang akan diubah     : ")
+        penulis_skenario = input("Masukkan nama penulis skenario yang baru : ")
+        sutradara = input("Masukkan nama sutradara yang baru        : ")
+        tahun_rilis = input("Masukkan tahun rilis yang baru           : ")
+        edit_film(judul, penulis_skenario, sutradara, tahun_rilis)
+    
+    elif pilihan == "4":
+        tampilkan_datafilm()
+    
+    elif pilihan == "5":
+        print("Terima kasih telah menggunakan program ini.")
+        break
+    
+    else:
+        print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
+    
+print("========================================================")
+print("-----------------------------------")
+
+Biodata = {
+    "Nama"  : "Angelina Zaskya Hulda",
+    "NIM"   : 2310432041,
+    "Shift" : 3
+}
+
+for key, value in Biodata.items():
+    print(f"{key:<8} : {value}")
+print("-----------------------------------")
