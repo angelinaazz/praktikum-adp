@@ -1,0 +1,47 @@
+import os
+os.system('cls')
+from termcolor import colored, cprint
+
+print("           LOGO MIT           ")
+print(colored("==============================", "dark_grey"))
+print()
+
+#baris ke-1
+for i in range(4):
+    cprint(" "*3, "red", "on_red", end=" ")
+    print("", end=" ")
+    
+cprint(" "*8, "red", "on_red", end=" ")
+print()
+
+#baris ke-2
+for i in range(3):
+    cprint(" "*3, "red", "on_red", end=" ")
+    print("", end=" ")
+print()
+
+#baris ke-3 dan ke-4
+for i in range(3):
+    for j in range(3):
+        cprint(" "*3, "red", "on_red", end=" ")
+        print("", end=" ")
+    cprint(" "*3, "dark_grey", "on_dark_grey", end=" ")
+    print("", end=" ")
+    cprint(" "*3, "red", "on_red", end=" ")
+    print()
+
+#baris ke-5 dan ke-6
+for i in range(2):
+    cprint(" "*3, "red", "on_red", end=" ")
+    print("", end=" ")
+    print(" "*3, end=" ")
+    print("", end=" ")
+    cprint(" "*3, "red", "on_red", end=" ")
+    print("", end=" ")
+    cprint(" "*3, "dark_grey", "on_dark_grey", end=" ")
+    print("", end=" ")
+    cprint(" "*3, "red", "on_red", end=" ")
+    print()
+
+print()
+print(colored("==============================", "dark_grey"))
