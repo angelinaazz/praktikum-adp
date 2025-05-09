@@ -1,0 +1,39 @@
+print("===========================================================================")
+print("                      JUMLAH SUKU YANG BERNILAI GENAP                      ")
+print("                           DARI BARISAN FIBONACCI                          ")
+print("===========================================================================")
+
+def fibo_data_genap(n):
+    u1 = 0
+    u2 = 1
+    data_genap = []
+
+    while u1 <= n:
+        if u1 % 2 == 0:
+            data_genap.append(u1)
+        jumlah = u1 + u2
+        u1 = u2
+        u2 = jumlah
+
+    print(f"Barisan suku yang bernilai genap dari barisan fibonacci ≤ {n} : ")
+    print(f"                  {data_genap}                                  ")
+
+def fibo_total(n):
+    u1 = 0
+    u2 = 1
+    total = 0
+
+    while u1 <= n:
+        if u1 % 2 == 0:
+            total = total + u1
+        jumlah = u1 + u2
+        u1 = u2
+        u2 = jumlah
+
+    print(f"Jumlah semua suku yang bernilai genap barisan fibonacci ≤ {n} = {total}")
+    print("diperoleh,")
+    print(f"                             f({n}) = {total}                          ")  
+
+n = int(input("Masukkan nilai n: "))
+fibo_data_genap(n)
+fibo_total(n)
